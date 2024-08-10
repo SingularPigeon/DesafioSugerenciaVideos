@@ -1,8 +1,9 @@
 // Función patrón módulo
 const ModuloVideos = (() => {
   // Función privada
-  function showVideo(url, id) {
+  let showVideo = (url, id) => {
     let iframe = document.getElementById(id);
+    // Validación para la etiqueta iframe en el DOM
     if (iframe) {
       iframe.setAttribute('src', url);
     } else {
@@ -10,12 +11,10 @@ const ModuloVideos = (() => {
     }
   }
   // Función pública
-  return function(url, id) {
-    showVideo(url, id);
-  };
+return {showVideo}
 })();
 
-// Clases 
+// Super padre
 class Multimedia {
   #url;
   constructor(url) {
@@ -29,7 +28,7 @@ class Multimedia {
     return `Este método es para realizar un cambio en la URL del video`;
   }
 }
-
+// Clase hija
 class Reproductor extends Multimedia {
   #id;
   constructor(url, id) {
@@ -37,17 +36,14 @@ class Reproductor extends Multimedia {
     this.#id = id;
   }
 
-  get id() {
-    return this.#id;
-  }
-  // Método
+  // Método mostrar video
   playMultimedia() {
-    ModuloVideos(this.url, this.#id);
+    ModuloVideos.showVideo(this.url, this.#id);
   }
-// Método
+// Método para seleccionar el punto de inicio del video
   setInicio(seg) {
     let nuevoUrl = `${this.url}&start=${seg}`;
-    ModuloVideos(nuevoUrl, this.#id);
+    ModuloVideos.showVideo(nuevoUrl, this.#id);
   }
 }
 
