@@ -66,3 +66,6 @@ pelicula.playMultimedia();
 serie.playMultimedia();
 
 pelicula.setInicio(105);
+
+
+// Grupo Jazmín, Cecilia, Paloma y conversaciones con Miguel 🫶🏼
