@@ -69,4 +69,4 @@ musica.playMultimedia();
 pelicula.playMultimedia();
 serie.playMultimedia();
 
-pelicula.setInicio(30);
+pelicula.setInicio(105);
