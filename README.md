@@ -32,6 +32,6 @@ Se puede indicar el tiempo de inicio de los videos utilizando el **método setIn
 
 ## Uso
 ### Requisitos
-1 Navegador compatible con ES6+.
-2 CDN cargar Bootstrap y Google Fonts
+- 1 Navegador compatible con ES6+.
+- 2 CDN cargar Bootstrap y Google Fonts
 
